@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sarif <sarif@student.42.fr>                +#+  +:+       +#+        */
+/*   By: soufiix <soufiix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 22:12:37 by sarif             #+#    #+#             */
-/*   Updated: 2023/12/27 20:18:31 by sarif            ###   ########.fr       */
+/*   Updated: 2024/02/19 00:05:57 by soufiix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_strjoin(char *reserve, char *buffer)
 
 	i = 0;
 	j = 0;
-	if (!reserve)
+	if (!reserve && buffer != NULL)
 		return (ft_strdup(buffer));
 	if (!buffer)
 		return (reserve);

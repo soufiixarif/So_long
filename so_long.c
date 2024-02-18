@@ -6,19 +6,19 @@ char	**readfromap(char **mapfile, int fd)
 	char	*onelinemap;
 
 	str = get_next_line(fd);
-	if (str[0] == '\n')
-	{
-		printf("line lowel khawi");
+	if (!str && write(1, "map khawia",5))
 		exit(EXIT_FAILURE);
-	}
 	onelinemap = NULL;
-	onelinemap = ft_strjoin(onelinemap, str);
 	while (str)
 	{
+		if (*str == '\n' && write(1,"line lowel khawi",17))
+			exit(EXIT_FAILURE);
+		onelinemap = ft_strjoin(onelinemap, str);
 		free(str);
 		str = get_next_line(fd);
-		onelinemap = ft_strjoin(onelinemap, str);
 	}
+	if (onelinemap && onelinemap[ft_strlen(onelinemap) - 1] == '\n' && write(1, "star zayd",10))
+		exit(EXIT_FAILURE);
 	mapfile = ft_split(onelinemap, '\n');
 	return (mapfile);
 }

@@ -3,11 +3,11 @@
 void	checkstructcontent(t_check *s)
 {
 	if (s->c < 1)
-		exit (write (1, "coins na9sin", 14));
+		exit (write (1, "coins na9sin", 13));
 	if (s->e != 1)
-		exit (write (1, "lkharja mahiach", 17));
+		exit (write (1, "lkharja mahiach", 16));
 	if (s->p != 1)
-		exit (write (1, "le3ab mahowach", 16));
+		exit (write (1, "le3ab mahowach", 15));
 }
 
 void	checkmiddlemap(char *line)
@@ -34,15 +34,15 @@ void	chackmapcomponent(char *line, t_check *n)
 	i = 0;
 	while (line[i])
 	{
-		if (line[i] == 'p')
+		if (line[i] == 'P')
 		{
 			n->p += 1;
 		}
-		if (line[i] == 'c')
+		if (line[i] == 'C')
 		{
 			n->c += 1;
 		}
-		if (line[i] == 'e')
+		if (line[i] == 'E')
 		{
 			n->e += 1;
 		}
