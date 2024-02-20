@@ -10,7 +10,7 @@ void	checklenmap(char **mapfile)
 	nboflines = checklenoflines(mapfile);
 	i = 1;
 	len = ft_strlen(mapfile[0]);
-	while (i < nboflines - 1)
+	while (i < nboflines)
 	{
 		tmp = so_long_strlen(mapfile[i]);
 		if (len != tmp)
@@ -49,4 +49,41 @@ size_t	so_long_strlen(char *str)
 		}
 	}
 	return (i);
+}
+void posplayer(char **map, t_check *s)
+{
+	int i = 0;
+	int j = 0;
+
+	while (map[j])
+	{
+		i = 0;
+		while (map[j][i])
+		{
+			if (map[j][i] == 'P')
+			{
+				s->xp = i;
+				s->yp = j;
+			}
+			i++;
+		}
+		j++;
+	}
+}
+void floodfill(char **map, int xp, int yp, int rows)
+{
+	int len;
+	len = ft_strlen(map[0]);
+	if (xp < 0 || xp >= len || yp < 0 || yp >= rows || map[yp][xp] == '1')
+		return;
+	else if (map[yp][xp] == 'E')
+		map[yp][xp] = '1';
+	else
+	{
+		map[yp][xp] = '1';
+		floodfill(map, (xp + 1), yp, rows);
+		floodfill(map, (xp - 1), yp, rows);
+		floodfill(map, xp, (yp + 1), rows);
+		floodfill(map, xp, (yp - 1), rows);
+	}
 }
