@@ -6,12 +6,12 @@ char	**readfromap(char **mapfile, int fd)
 	char	*onelinemap;
 
 	str = get_next_line(fd);
-	if (!str && write(1, "map khawia",11))
+	if (!str && write(1, "map khawia", 11))
 		exit(EXIT_FAILURE);
 	onelinemap = NULL;
 	while (str)
 	{
-		if (*str == '\n' && write(1,"star zayd",17))
+		if (*str == '\n' && write(1,"star zayd", 10))
 			exit(EXIT_FAILURE);
 		onelinemap = ft_strjoin(onelinemap, str);
 		free(str);
@@ -36,5 +36,6 @@ int	main(int argc, char **argv)
 		fd = open(*mapfile, O_RDONLY);
 		mapfile = readfromap(mapfile, fd);
 		checkmapvalidity(mapfile);
+		mlx(mapfile);
 	}
 }

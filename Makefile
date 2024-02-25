@@ -1,13 +1,14 @@
 NAME = so_long
-SRC = get_next_line_utils.c get_next_line.c libftfun.c libftfun2.c mapvalidityfun.c mapvalidityfun2.c so_long.c
+SRC = get_next_line_utils.c get_next_line.c libftfun.c libftfun2.c mapvalidityfun.c mapvalidityfun2.c so_long.c mlxfun.c
 OBJ = $(SRC:.c=.o)
 CC = cc
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -Imlx
+MLX_FLAGS = -Imlx -lmlx -framework OpenGL -framework AppKit
 
 all : $(NAME)
 
 $(NAME) : $(OBJ)
-	cc $(FLAGS) $(OBJ) -o $(NAME)
+	cc $(FLAGS) $(MLX_FLAGS) $(OBJ) -o $(NAME)
 	rm -rf $(OBJ)
 
 %.o : %.c so_long.h

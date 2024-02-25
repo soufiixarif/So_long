@@ -16,6 +16,7 @@ size_t	ft_strlcpy(char *dst, char *src, size_t dstsize)
 	}
 	return (ft_strlen(src));
 }
+
 void	*ft_memset(void *b, int c, size_t len)
 {
 	size_t	i;
@@ -30,6 +31,7 @@ void	ft_bzero(void *s, size_t n)
 {
 	ft_memset(s, 0, n);
 }
+
 char	*ft_strrchr(char *s, int c)
 {
 	int	i;
@@ -45,6 +47,7 @@ char	*ft_strrchr(char *s, int c)
 	}
 	return (0);
 }
+
 int	ft_strcmp(char *s1, char *s2)
 {
 	int	i;

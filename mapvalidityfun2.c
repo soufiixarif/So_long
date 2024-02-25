@@ -50,11 +50,14 @@ size_t	so_long_strlen(char *str)
 	}
 	return (i);
 }
-void posplayer(char **map, t_check *s)
-{
-	int i = 0;
-	int j = 0;
 
+void	posplayer(char **map, t_check *s)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
 	while (map[j])
 	{
 		i = 0;
@@ -70,12 +73,14 @@ void posplayer(char **map, t_check *s)
 		j++;
 	}
 }
-void floodfill(char **map, int xp, int yp, int rows)
+
+void	floodfill(char **map, int xp, int yp, int rows)
 {
-	int len;
+	int	len;
+
 	len = ft_strlen(map[0]);
 	if (xp < 0 || xp >= len || yp < 0 || yp >= rows || map[yp][xp] == '1')
-		return;
+		return ;
 	else if (map[yp][xp] == 'E')
 		map[yp][xp] = '1';
 	else
