@@ -2,6 +2,7 @@
 
 void	checkstructcontent(t_check *s, int n)
 {
+	// befor floodfill
 	if (n == 0)
 	{
 		if (s->c < 1)
@@ -11,6 +12,7 @@ void	checkstructcontent(t_check *s, int n)
 		if (s->p != 1)
 			exit (write (1, "le3ab mahowach", 15));
 	}
+	//after floodfill
 	else if (n == 1)
 	{
 		if (s->c > 0)
@@ -72,18 +74,20 @@ void	checkmapvalidity(char **mapfile)
 	int		i;
 	int		rows;
 	t_check	s;
+	char **mapp;
 
 	s.xp = 0;
 	s.yp = 0;
-	rows = checklenoflines(mapfile);
 	i = 0;
+	rows = checklenoflines(mapfile);
+	mapp = arrdup(mapfile,rows);
 	checklenmap(mapfile);
 	checkforone(mapfile[0]);
 	checkforone(mapfile[rows - 1]);
 	checkmapcomponent(mapfile, &s);
 	checkstructcontent(&s, 0);
 	posplayer(mapfile, &s);
-	floodfill(mapfile, s.xp, s.yp, rows);
-	checkmapcomponent(mapfile, &s);
+	floodfill(mapp, s.xp, s.yp, rows);
+	checkmapcomponent(mapp, &s);
 	checkstructcontent(&s, 1);
 }

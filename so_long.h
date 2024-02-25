@@ -68,6 +68,8 @@ void	posplayer(char **map, t_check *s);
 void	floodfill(char **map, int xp, int yp, int rows);
 // mlx
 void    mlx(char **map);
+void    xmp_to_img(t_data *d);
+void    put_img(char **map, t_data *d);
 
 
 
@@ -77,5 +79,8 @@ size_t	ft_strlcpy(char *dst, char *src, size_t dstsize);
 void	ft_bzero(void *s, size_t n);
 char	*ft_strrchr(char *s, int c);
 int		ft_strcmp(char *s1, char *s2);
+
+//tools
+char **arrdup(char **map,int rows);
 
 #endif
