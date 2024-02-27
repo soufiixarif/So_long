@@ -9,7 +9,6 @@ char **arrdup(char **map,int rows)
     while(map[i])
     {
         mapp[i] = ft_strdup(map[i]);
-        printf("%s\n",mapp[i]);
         i++;
     }
     mapp[i] = NULL;

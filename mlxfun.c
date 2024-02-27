@@ -1,4 +1,10 @@
 #include "so_long.h"
+int	key_hook(int keycode, t_data *d, char **map)
+{
+    if (key_hook == 2)
+        moveright(&d,map);
+    return (0);
+}
 void    put_img(char **map, t_data *d)
 {
     int i;
@@ -8,7 +14,6 @@ void    put_img(char **map, t_data *d)
     while(map[j])
     {
         i = 0;
-        printf("%s\n",map[j]);
         while(map[j][i])
         {
             if (map[j][i] == '1')
@@ -46,11 +51,11 @@ void    mlx(char **map)
 
     d.rows = checklenoflines(map);
     d.len = ft_strlen(map[0]);
-    printf("stora :%d o kol star fih %d\n",d.rows, d.len);
     d.mlx = mlx_init();
     d.win = mlx_new_window(d.mlx, 60 * d.len, 60 * d.rows, "So_long");
     xmp_to_img(&d);
     put_img(map,&d);
+    mlx_hook(d.win, 2, 0, key_hook, &d);
 
     mlx_loop(d.mlx);
 }

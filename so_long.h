@@ -9,7 +9,7 @@
 # include <strings.h>
 # include <mlx.h>
 
-// mlx struct
+// mlx struct 
 typedef struct	s_data {
 	void	*mlx;
 	void	*win;
@@ -27,7 +27,6 @@ typedef struct	s_data {
 	void	*rc;
 	void	*yc;
 	void	*wall;
-
 }				t_data;
 
 //parcing struct// P = Player // C = Coin // E = Exit // xp && yp = pose player 
@@ -70,8 +69,7 @@ void	floodfill(char **map, int xp, int yp, int rows);
 void    mlx(char **map);
 void    xmp_to_img(t_data *d);
 void    put_img(char **map, t_data *d);
-
-
+int		key_hook(int keycode, t_data *d, char **map);
 
 // LIBFT FUNCTIONS
 void	*ft_calloc(size_t count, size_t size);
