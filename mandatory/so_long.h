@@ -8,9 +8,16 @@
 # include <fcntl.h>
 # include <strings.h>
 # include <mlx.h>
+# include "/Users/sarif/Desktop/so_long_git/printf/ft_printf.h"
 
-// mlx struct 
-typedef struct	s_data {
+typedef struct s_data
+{
+	char	**map;
+	int		p;
+	int		c;
+	int		e;
+	int		xp;
+	int		yp;
 	void	*mlx;
 	void	*win;
 	int		height;
@@ -20,24 +27,15 @@ typedef struct	s_data {
 	void	*cd;
 	void	*od;
 	void	*grnd;
-    void	*pd;
+	void	*pd;
 	void	*pu;
 	void	*pl;
 	void	*pr;
 	void	*rc;
 	void	*yc;
 	void	*wall;
-}				t_data;
-
-//parcing struct// P = Player // C = Coin // E = Exit // xp && yp = pose player 
-typedef struct checkmapbvld
-{
-	int	p;
-	int	c;
-	int	e;
-	int	xp;
-	int	yp;
-}	t_check;
+	int		moves;
+}	t_data;
 
 // GET_NEXT_LINE FUNCTIONS
 
@@ -54,22 +52,27 @@ size_t	ft_strlen(char *str);
 
 // SO_LONG FUNCTIONS
 // parsing
-void	checkforone(char *line);
-void	checkmapcomponent(char **map, t_check *n);
-void	checkstructcontent(t_check *s, int n);
+void	checkforone(t_data *d,char *line);
+void	checkmapcomponent(char **map, t_data *d);
+void	checkstructcontent(t_data *d, int n);
 int		checklenoflines(char **gamap);
-void	checkmapvalidity(char **mapfile);
-void	checklenmap(char **mapfile);
+void	checkmapvalidity(t_data *d);
+void	checklenmap(t_data *d, char **mapfile);
 size_t	so_long_strlen(char *str);
 char	**ft_split(char *s, char c);
 char	**readfromap(char **mapfile, int fd);
-void	posplayer(char **map, t_check *s);
+void	posplayer(char **map, t_data *d);
 void	floodfill(char **map, int xp, int yp, int rows);
 // mlx
-void    mlx(char **map);
-void    xmp_to_img(t_data *d);
-void    put_img(char **map, t_data *d);
-int		key_hook(int keycode, t_data *d, char **map);
+void	mlx(t_data *d);
+void	xmp_to_img(t_data *d);
+void	put_img(char **map, t_data *d);
+int		moves(int keycode, t_data *d);
+void	moveright(t_data *d, int j, int i);
+void	moveleft(t_data *d, int j, int i);
+void	moveup(t_data *d, int j, int i);
+void	movedown(t_data *d, int j, int i);
+int		close_win(t_data *d);
 
 // LIBFT FUNCTIONS
 void	*ft_calloc(size_t count, size_t size);
@@ -78,7 +81,12 @@ void	ft_bzero(void *s, size_t n);
 char	*ft_strrchr(char *s, int c);
 int		ft_strcmp(char *s1, char *s2);
 
-//tools
-char **arrdup(char **map,int rows);
+//TOOLS
+char	**arrdup(char **map, int rows);
+int		checkforcoin(char **map);
+int		ft_free(char *s);
+int		ft_2dfree(char **s);
+void	printerror(t_data *d);
+
 
 #endif

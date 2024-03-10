@@ -3,5 +3,9 @@
         "activityBar.background": "#4A2303",
         "titleBar.activeBackground": "#683204",
         "titleBar.activeForeground": "#FFFAF5"
+    },
+    "files.associations": {
+        "so_long": "c",
+        "ft_printf.h": "c"
     }
 }

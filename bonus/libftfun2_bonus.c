@@ -1,4 +1,4 @@
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 size_t	ft_strlcpy(char *dst, char *src, size_t dstsize)
 {
@@ -54,7 +54,7 @@ int	ft_strcmp(char *s1, char *s2)
 
 	i = 0;
 	if (!s1 || !s2)
-		exit(write(1,"extension makinach",19));
+		exit(write (1, "extension makinach", 19));
 	while (s1[i] == s2[i] && s1[i] != 0 && s2[i] != 0)
 	{
 		i++;

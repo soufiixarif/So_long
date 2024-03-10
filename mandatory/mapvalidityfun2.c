@@ -1,6 +1,6 @@
 #include "so_long.h"
 
-void	checklenmap(char **mapfile)
+void	checklenmap(t_data *d, char **mapfile)
 {
 	int		len;
 	int		tmp;
@@ -14,7 +14,7 @@ void	checklenmap(char **mapfile)
 	{
 		tmp = so_long_strlen(mapfile[i]);
 		if (len != tmp)
-			exit (write (1, "len of map lines error", 23));
+			printerror(d);
 		i++;
 	}
 }
@@ -51,7 +51,7 @@ size_t	so_long_strlen(char *str)
 	return (i);
 }
 
-void	posplayer(char **map, t_check *s)
+void	posplayer(char **map, t_data *d)
 {
 	int	i;
 	int	j;
@@ -65,8 +65,8 @@ void	posplayer(char **map, t_check *s)
 		{
 			if (map[j][i] == 'P')
 			{
-				s->xp = i;
-				s->yp = j;
+				d->xp = i;
+				d->yp = j;
 			}
 			i++;
 		}
