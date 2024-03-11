@@ -1,6 +1,23 @@
 #ifndef SO_LONG_BONUS_H
 # define SO_LONG_BONUS_H
 
+# define WALL "Btextures/wall.xpm"
+# define DC "Btextures/door_closed.xpm"
+# define DO "Btextures/door_open.xpm"
+# define GRND "Btextures/ground.xpm"
+# define PD "Btextures/player_down.xpm"
+# define PU "Btextures/playerUp.xpm"
+# define PL "Btextures/playerLeft.xpm"
+# define PR "Btextures/playerRight.xpm"
+# define C1 "Btextures/c1.xpm"
+# define C2 "Btextures/c2.xpm"
+# define C3 "Btextures/c3.xpm"
+# define C4 "Btextures/c4.xpm"
+# define N1 "Btextures/N1.xpm"
+# define N2 "Btextures/N2.xpm"
+# define N3 "Btextures/N3.xpm"
+# define N4 "Btextures/N4.xpm"
+
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
@@ -8,6 +25,7 @@
 # include <fcntl.h>
 # include <strings.h>
 # include <mlx.h>
+# include <time.h>
 # include "/Users/sarif/Desktop/so_long_git/printf/ft_printf.h"
 
 typedef struct s_data
@@ -35,10 +53,18 @@ typedef struct s_data
 	void	*pl;
 	void	*pr;
 	void	*rc;
-	void	*yc;
+	void	*c1;
+	void	*c2;
+	void	*c3;
+	void	*c4;
 	void	*wall;
 	void	*n1;
+	void	*n2;
+	void	*n3;
+	void	*n4;
 	int		moves;
+	clock_t	estart;
+	clock_t	cstart;
 }	t_data;
 
 // GET_NEXT_LINE FUNCTIONS
@@ -78,8 +104,13 @@ void	moveup(t_data *d, int j, int i, int keycode);
 void	movedown(t_data *d, int j, int i, int keycode);
 int		close_win(t_data *d);
 void	put_img_player(t_data *d, int keycode, int i, int j);
-void	checkdoorpos(t_data *d);
 void	opendoor(t_data *d);
+int		animation(t_data *d);
+void	coinanimation(t_data *d);
+void	enemyanimation(t_data *d);
+void	mlx_img(t_data *data, void *img, int x, int y);
+void	putcoinframe(t_data *d, void *img);
+void	putenemyframe(t_data *d, void *img);
 
 // LIBFT FUNCTIONS
 void	*ft_calloc(size_t count, size_t size);
@@ -87,6 +118,8 @@ size_t	ft_strlcpy(char *dst, char *src, size_t dstsize);
 void	ft_bzero(void *s, size_t n);
 char	*ft_strrchr(char *s, int c);
 int		ft_strcmp(char *s1, char *s2);
+char	*ft_itoa(int n);
+char	*ft_strjoinmliha(char *s1, char *s2);
 
 //TOOLS
 char	**arrdup(char **map, int rows);

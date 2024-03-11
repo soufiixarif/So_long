@@ -39,7 +39,7 @@ int	main(int argc, char **argv)
 		if (ft_strcmp (ft_strrchr (argv[1], '.'), ".ber"))
 			exit(write(1, "smia mahiach", 13));
 		fd = open(*d.map, O_RDONLY);
-		d.map = readfromap(d.map, fd);	
+		d.map = readfromap(d.map, fd);
 		checkmapvalidity(&d);
 		mlx(&d);
 	}

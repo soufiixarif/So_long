@@ -52,7 +52,7 @@ size_t	ft_strlen(char *str);
 
 // SO_LONG FUNCTIONS
 // parsing
-void	checkforone(t_data *d,char *line);
+void	checkforone(t_data *d, char *line);
 void	checkmapcomponent(char **map, t_data *d);
 void	checkstructcontent(t_data *d, int n);
 int		checklenoflines(char **gamap);
@@ -73,6 +73,7 @@ void	moveleft(t_data *d, int j, int i);
 void	moveup(t_data *d, int j, int i);
 void	movedown(t_data *d, int j, int i);
 int		close_win(t_data *d);
+void	mlx_img(t_data *d, void *img, int x, int y);
 
 // LIBFT FUNCTIONS
 void	*ft_calloc(size_t count, size_t size);
@@ -87,6 +88,5 @@ int		checkforcoin(char **map);
 int		ft_free(char *s);
 int		ft_2dfree(char **s);
 void	printerror(t_data *d);
-
 
 #endif

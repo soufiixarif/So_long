@@ -4,11 +4,11 @@ SRC_DIR = mandatory
 SRC_B_DIR = bonus
 SRC = $(SRC_DIR)/get_next_line_utils.c $(SRC_DIR)/get_next_line.c $(SRC_DIR)/libftfun.c \
 $(SRC_DIR)/libftfun2.c $(SRC_DIR)/mapvalidityfun.c $(SRC_DIR)/mapvalidityfun2.c \
-$(SRC_DIR)/so_long.c $(SRC_DIR)/mlxfun.c $(SRC_DIR)/tools.c $(SRC_DIR)/moves.c
+$(SRC_DIR)/so_long.c $(SRC_DIR)/mlxfun.c $(SRC_DIR)/tools.c $(SRC_DIR)/moves.c $(SRC_DIR)/mlxfun2.c
 SRC_B = $(SRC_B_DIR)/get_next_line_utils_bonus.c $(SRC_B_DIR)/get_next_line_bonus.c $(SRC_B_DIR)/libftfun_bonus.c \
 $(SRC_B_DIR)/libftfun2_bonus.c $(SRC_B_DIR)/mapvalidityfun_bonus.c $(SRC_B_DIR)/mapvalidityfun2_bonus.c \
 $(SRC_B_DIR)/so_long_bonus.c $(SRC_B_DIR)/mlxfun_bonus.c $(SRC_B_DIR)/tools_bonus.c $(SRC_B_DIR)/moves_bonus.c \
-$(SRC_B_DIR)/mlxfun2_bonus.c
+$(SRC_B_DIR)/mlxfun2_bonus.c $(SRC_B_DIR)/mlxfun3_bonus.c $(SRC_B_DIR)/libftfun3.c
 OBJ = $(SRC:.c=.o)
 OBJ_B = $(SRC_B:.c=.o)
 CC = cc

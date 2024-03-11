@@ -28,15 +28,15 @@ void	put_img(char **map, t_data *d)
 		while (map[j][i])
 		{
 			if (map[j][i] == '1')
-				mlx_put_image_to_window(d->mlx, d->win, d->wall, i * 60, j * 60);
+				mlx_img(d, d->wall, i * 60, j * 60);
 			else if (map[j][i] == '0')
-				mlx_put_image_to_window(d->mlx, d->win, d->grnd, i * 60, j * 60);
+				mlx_img(d, d->grnd, i * 60, j * 60);
 			else if (map[j][i] == 'P')
-				mlx_put_image_to_window(d->mlx, d->win, d->pd, i * 60, j * 60);
+				mlx_img(d, d->pd, i * 60, j * 60);
 			else if (map[j][i] == 'C')
-				mlx_put_image_to_window(d->mlx, d->win, d->yc, i * 60, j * 60);
+				mlx_img(d, d->yc, i * 60, j * 60);
 			else if (map[j][i] == 'E')
-				mlx_put_image_to_window(d->mlx, d->win, d->cd, i * 60, j * 60);
+				mlx_img(d, d->cd, i * 60, j * 60);
 			i++;
 		}
 		j++;

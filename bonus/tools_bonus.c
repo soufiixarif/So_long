@@ -41,7 +41,6 @@ int	checkforcoin(char **map)
 
 int	close_win(t_data *d)
 {
-	// ft_2dfree(d->map);
 	d = NULL;
 	exit(0);
 }

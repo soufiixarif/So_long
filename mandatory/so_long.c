@@ -24,7 +24,6 @@ char	**readfromap(char **mapfile, int fd)
 		exit(EXIT_FAILURE);
 	}
 	mapfile = ft_split(onelinemap, '\n');
-	// ft_free(str);
 	ft_free(onelinemap);
 	return (mapfile);
 }
@@ -34,7 +33,6 @@ int	main(int argc, char **argv)
 	t_data	d;
 	int		fd;
 
-
 	if (argc > 1)
 	{
 		d.map = &argv[1];
@@ -42,7 +40,6 @@ int	main(int argc, char **argv)
 			exit(write(1, "smia mahiach", 13));
 		fd = open(*d.map, O_RDONLY);
 		d.map = readfromap(d.map, fd);
-			
 		checkmapvalidity(&d);
 		mlx(&d);
 	}

@@ -27,14 +27,14 @@ void	checkmapcomponent(char **map, t_data *d)
 	int	i;
 	int	j;
 
-	j = 0;
+	j = -1;
 	d->c = 0;
 	d->p = 0;
 	d->e = 0;
-	while (map[j])
+	while (map[++j])
 	{
-		i = 0;
-		while (map[j][i])
+		i = -1;
+		while (map[j][++i])
 		{
 			if (map[j][0] != '1' || map[j][ft_strlen(map[0]) - 1] != '1')
 				printerror(d);
@@ -46,9 +46,7 @@ void	checkmapcomponent(char **map, t_data *d)
 				d->e += 1;
 			else if (map[j][i] != '0' && map[j][i] != '1')
 				printerror(d);
-			i++;
 		}
-		j++;
 	}
 }
 
