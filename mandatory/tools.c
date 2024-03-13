@@ -7,6 +7,8 @@ char	**arrdup(char **map, int rows)
 
 	i = 0;
 	mapp = (char **)malloc((rows + 1) * sizeof(char *));
+	if (!mapp)
+		exit(2);
 	while (map[i])
 	{
 		mapp[i] = ft_strdup(map[i]);

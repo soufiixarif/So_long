@@ -42,3 +42,10 @@ void	putenemyframe(t_data *d, void *img)
 		j++;
 	}
 }
+
+void	destroy_win(t_data *d, int status)
+{
+	ft_2dfree(d->map);
+	mlx_destroy_window(d->mlx, d->win);
+	exit(1);
+}

@@ -6,7 +6,8 @@ void	moveright(t_data *d, int j, int i)
 	{
 		ft_printf("%d moves\n", ++d->moves);
 		ft_2dfree(d->map);
-		exit(write(1, "you won", 8));
+		write(1, "you won\n", 9);
+		exit(0);
 	}
 	else if (d->map[j][i + 1] != '1' && d->map[j][i + 1] != 'E')
 	{
@@ -24,7 +25,8 @@ void	moveleft(t_data *d, int j, int i)
 	{
 		ft_printf("%d moves\n", ++d->moves);
 		ft_2dfree(d->map);
-		exit(write(1, "you won", 8));
+		write(1, "you won\n", 9);
+		exit(0);
 	}
 	else if (d->map[j][i - 1] != '1' && d->map[j][i - 1] != 'E')
 	{
@@ -41,7 +43,8 @@ void	moveup(t_data *d, int j, int i)
 	{
 		ft_printf("%d moves\n", ++d->moves);
 		ft_2dfree(d->map);
-		exit(write(1, "you won\n", 8));
+		write(1, "you won\n", 9);
+		exit(0);
 	}
 	else if (d->map[j - 1][i] != '1' && d->map[j - 1][i] != 'E')
 	{
@@ -58,7 +61,8 @@ void	movedown(t_data *d, int j, int i)
 	{
 		ft_printf("%d moves\n", ++d->moves);
 		ft_2dfree(d->map);
-		exit(write(1, "you won", 8));
+		write(1, "you won\n", 9);
+		exit(0);
 	}
 	else if (d->map[j + 1][i] != '1' && d->map[j + 1][i] != 'E')
 	{
@@ -73,6 +77,6 @@ void	printerror(t_data *d)
 {
 	ft_2dfree(d->map);
 	d->map = NULL;
-	printf("map error");
+	printf("Error\nmap invalide4");
 	exit(EXIT_FAILURE);
 }

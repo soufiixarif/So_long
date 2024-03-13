@@ -81,7 +81,7 @@ void	*ft_calloc(size_t count, size_t size)
 		return (NULL);
 	s = malloc(count * size);
 	if (!s)
-		return (0);
+		exit(2);
 	ft_bzero(s, count * size);
 	return (s);
 }

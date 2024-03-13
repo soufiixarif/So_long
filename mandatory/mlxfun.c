@@ -45,16 +45,13 @@ void	put_img(char **map, t_data *d)
 
 void	xmp_to_img(t_data *d)
 {
-	d->cd = mlx_xpm_file_to_image(d->mlx,
-			"textures/doorClosed.xpm", &d->width, &d->height);
-	d->grnd = mlx_xpm_file_to_image(d->mlx,
-			"textures/ground.xpm", &d->width, &d->height);
-	d->pd = mlx_xpm_file_to_image(d->mlx,
-			"textures/playerDown.xpm", &d->width, &d->height);
-	d->yc = mlx_xpm_file_to_image(d->mlx,
-			"textures/YellowCollectible.xpm", &d->width, &d->height);
-	d->wall = mlx_xpm_file_to_image(d->mlx,
-			"textures/wall.xpm", &d->width, &d->height);
+	d->cd = mlx_xpm_file_to_image(d->mlx, DC, &d->width, &d->height);
+	d->grnd = mlx_xpm_file_to_image(d->mlx, GROUND, &d->width, &d->height);
+	d->pd = mlx_xpm_file_to_image(d->mlx, PLAYER, &d->width, &d->height);
+	d->yc = mlx_xpm_file_to_image(d->mlx, COIN, &d->width, &d->height);
+	d->wall = mlx_xpm_file_to_image(d->mlx, WALL, &d->width, &d->height);
+	if (!d->cd || !d->grnd || !d->pd || !d->yc || !d->wall)
+		destroy_win(d, 1);
 }
 
 void	mlx(t_data *d)

@@ -1,6 +1,12 @@
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
+# define DC "textures/doorClosed.xpm"
+# define GROUND "textures/ground.xpm"
+# define PLAYER "textures/playerDown.xpm"
+# define COIN "textures/YellowCollectible.xpm"
+# define WALL "textures/wall.xpm"
+
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
@@ -74,6 +80,7 @@ void	moveup(t_data *d, int j, int i);
 void	movedown(t_data *d, int j, int i);
 int		close_win(t_data *d);
 void	mlx_img(t_data *d, void *img, int x, int y);
+void	destroy_win(t_data *d, int status);
 
 // LIBFT FUNCTIONS
 void	*ft_calloc(size_t count, size_t size);

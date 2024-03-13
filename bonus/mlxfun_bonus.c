@@ -59,6 +59,10 @@ void	xmp_to_img(t_data *d)
 	d->n3 = mlx_xpm_file_to_image(d->mlx, N3, &d->width, &d->height);
 	d->n4 = mlx_xpm_file_to_image(d->mlx, N4, &d->width, &d->height);
 	d->wall = mlx_xpm_file_to_image(d->mlx, WALL, &d->width, &d->height);
+	if (!d->cd || !d->od || !d->grnd || !d->pd || !d->pu || !d->pl || !d->pr
+		|| !d->c1 || !d->c2 || !d->c3 || !d->c4 || !d->n1 || !d->n2 || !d->n3
+		|| !d->n4 || !d->wall)
+		destroy_win (d, 1);
 }
 
 void	mlx(t_data *d)
@@ -76,6 +80,10 @@ void	mlx(t_data *d)
 	put_img(d->map, d, -1);
 	mlx_loop_hook(d->mlx, animation, d);
 	mlx_hook(d->win, 2, 0, moves, d);
+	steps = ft_itoa(d->moves);
+	steps = ft_strjoinmliha("steps : ", steps);
+	mlx_string_put(d->mlx, d->win, 60, 30, 0x00FFFF, steps);
+	free(steps);
 	mlx_hook(d->win, 17, 1L << 17, close_win, &d);
 	mlx_loop(d->mlx);
 }

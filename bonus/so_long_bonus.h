@@ -1,22 +1,22 @@
 #ifndef SO_LONG_BONUS_H
 # define SO_LONG_BONUS_H
 
-# define WALL "Btextures/wall.xpm"
-# define DC "Btextures/door_closed.xpm"
-# define DO "Btextures/door_open.xpm"
-# define GRND "Btextures/ground.xpm"
-# define PD "Btextures/player_down.xpm"
-# define PU "Btextures/playerUp.xpm"
-# define PL "Btextures/playerLeft.xpm"
-# define PR "Btextures/playerRight.xpm"
-# define C1 "Btextures/c1.xpm"
-# define C2 "Btextures/c2.xpm"
-# define C3 "Btextures/c3.xpm"
-# define C4 "Btextures/c4.xpm"
-# define N1 "Btextures/N1.xpm"
-# define N2 "Btextures/N2.xpm"
-# define N3 "Btextures/N3.xpm"
-# define N4 "Btextures/N4.xpm"
+# define WALL "textures/Bwall.xpm"
+# define DC "textures/door_closed.xpm"
+# define DO "textures/door_open.xpm"
+# define GRND "textures/Bground.xpm"
+# define PD "textures/player_down.xpm"
+# define PU "textures/playerUp.xpm"
+# define PL "textures/playerLeft.xpm"
+# define PR "textures/playerRight.xpm"
+# define C1 "textures/c1.xpm"
+# define C2 "textures/c2.xpm"
+# define C3 "textures/c3.xpm"
+# define C4 "textures/c4.xpm"
+# define N1 "textures/N1.xpm"
+# define N2 "textures/N2.xpm"
+# define N3 "textures/N3.xpm"
+# define N4 "textures/N4.xpm"
 
 # include <unistd.h>
 # include <stdlib.h>
@@ -111,6 +111,7 @@ void	enemyanimation(t_data *d);
 void	mlx_img(t_data *data, void *img, int x, int y);
 void	putcoinframe(t_data *d, void *img);
 void	putenemyframe(t_data *d, void *img);
+void	destroy_win(t_data *d, int status);
 
 // LIBFT FUNCTIONS
 void	*ft_calloc(size_t count, size_t size);

@@ -30,10 +30,10 @@ $(SRC_B_DIR)/%.o : $(SRC_B_DIR)/%.c $(SRC_B_DIR)so_long_bonus.h printf/libftprin
 		$(CC) $(FLAGS) -c $< -o $@
 clean :
 	rm -rf $(OBJ) $(OBJ_B)
-	make clean -C printf 
-fclean :
+	make clean -C printf
+fclean : clean
 	rm -rf $(NAME) $(NAME_B)
-	make fclean -C printf 
+	make fclean -C printf
 re : fclean all
 bonus : $(OBJ_B)
 	cc $(FLAGS) $(MLX_FLAGS) $(OBJ_B) -Lprintf -lftprintf -o $(NAME_B)

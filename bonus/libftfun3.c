@@ -69,5 +69,6 @@ char	*ft_strjoinmliha(char *s1, char *s2)
 	while (s2[j])
 		str[i++] = s2[j++];
 	str[i] = '\0';
+	free(s2);
 	return (str);
 }
